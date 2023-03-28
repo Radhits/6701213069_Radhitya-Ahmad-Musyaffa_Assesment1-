@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="proses.php">
+        <label for="angka1">Angka Pertama: </label>
+        <input type="number" id="angka1" name="angka1"><br><br>
+
+        <label for="angka2">Angka Kedua: </label>
+        <input type="number" id="angka2" name="angka2"><br><br>
+
+        <label for="operasi">Simbol Operasi: </label>
+        <select name="operasi" id="operasi">
+            <option value="+">Penambahan (+)</option>
+            <option value="-">Pengurangan (-)</option>
+            <option value="*">Perkalian (*)</option> 
+            <option value="/">pembagian (/)</option>
+          </select>
+          <button type="submit">Hitung</button>
+    </form>
+<!-- menampilkan hasil operasi aritmatika atau pesan error jika terjadi kesalahan -->
+<?php
+if (isset($hasil)) {
+  echo "Hasil operasi adalah: " . $hasil;
+} elseif (isset($pesan_error)) {
+  echo $pesan_error;
+}
+?>
+</body>
+</html>
+
